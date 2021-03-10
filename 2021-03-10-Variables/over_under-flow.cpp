@@ -3,7 +3,7 @@
 int main(int argc, char **argv)
 {
     // overflow
-    int a = 2147483647; // declararla
+    int a {2147483647}; // declararla
     std::cout << "a: " << a << "\n";
     a = a+1;
     std::cout << "a: " << a << "\n";
@@ -14,7 +14,7 @@ int main(int argc, char **argv)
     std::cout << "a: " << a << "\n";
 
     // underflow
-    float x = 1.0e-48;
+    float x {1.0e-48};
     std::cout << "x: " << x << "\n";
 
     // overflow
