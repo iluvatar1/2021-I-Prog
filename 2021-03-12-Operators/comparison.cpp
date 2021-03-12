@@ -5,21 +5,21 @@
 
 int main (int argc, char *argv[])
 {
-	bool flag = true;
+  bool flag = true;
 
-    flag = (7 == 5);
-    flag = (5 > 4);
-    flag = (3 != 5);
-    flag = (6 >= 6);
-    flag = (5 < 5);
+  flag = (7 == 5); // false // 0 
+  flag = (5 > 4); // true
+  flag = (3 != 5); // true
+  flag = (6 >= 6); // true
+  flag = (5 < 5); // false
 
-    int a = 2, b = 3, c = 4;
-    flag = ( a == 5 );
-    flag = ( a*b >= c );
-    flag = ( b+4 == a );
-    flag = ( (b=2) == a );
+  int a = 2, b = 3, c = 4;
+  flag = ( a == 5 ); // false
+  flag = ( a*b >= c ); // true
+  flag = ( b+4 == a ); // false
+  flag = ( (b=2) == a ); // true
 
-    flag = (2 > 5) && (3 < 1);
-    flag = (2 > 5) || (3 < 1);
-    return 0;
+  flag = (2 > 5) && (3 > 1); // false && true -- false
+  flag = (2 > 5) || (3 > 1); // false || true -- true
+  return 0;
 }

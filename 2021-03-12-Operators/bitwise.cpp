@@ -5,13 +5,13 @@
 
 int main (int argc, char *argv[])
 {
-	int a = 2;
-    int b = 4;
+  int a = 6; // 110
+  int b = 4; // 100
 
-    int c = a & b;
-    c = a | b;
-    c = a ^ b;
-    c = ~a;
-    c = a<<2;
-	return 0;
+  int c = a & b; // c = 100 = 4 
+  c = a | b; // c = 110 = 6
+  c = a ^ b; // c = 010 = 2 
+  c = ~a;    // c = 001 = -7 
+  c = a<<2;  // c = 11000 = 
+  return 0;
 }

@@ -5,12 +5,12 @@
 
 int main (int argc, char *argv[])
 {
-	int a = 0;
-    int b = 1;
-    int c = 7;
+  int a = 0;
+  int b = 1;
+  int c = 7;
 
-    a = ++b; // pre: first increment, then assing
-    a = c++; // post: first assing, then increment
+  a = ++b; // pre: first increment, then assing
+  a = c++; // post: first assing, then increment
 
-	return 0;
+  return 0;
 }
