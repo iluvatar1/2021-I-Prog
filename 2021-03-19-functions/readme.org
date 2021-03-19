@@ -1,4 +1,4 @@
-* functions I [1/4]
+* functions I [2/4]
 - [X] variable scope
   #+begin_src cpp :tangle scope.cpp
 #include <iostream>
@@ -23,7 +23,7 @@ void print_message(int a)
     std::cout << "Direccion de a en print: " << &a << std::endl;
 }
   #+end_src
-- [ ] Passing by value/copy and by reference
+- [X] Passing by value/copy and by reference
   #+begin_src cpp :tangle value-reference.cpp
 #include <iostream>
 
@@ -80,8 +80,10 @@ int add2(int a, const int & c)
 // requires c++11: -std=c++11
 #include <iostream>
 
+// [](){}; -> [capture](argumentos){instrucciones;};
+
 int main(int argc, char *argv[]) {
-    auto flambda = [](int a, int b) {return a < b; };
+    auto flambda = [](int a, int b) { return a < b; };
     bool flag = flambda(3, 4);
     std::cout << flag << "\n";
     std::cout << flambda(4, 3) << "\n";
