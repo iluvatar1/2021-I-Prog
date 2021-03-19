@@ -1,0 +1,113 @@
+* functions I [0/3]
+- [ ] variable scope
+  #+begin_src cpp :tangle scope.cpp
+#include <iostream>
+
+const int a = 20;
+
+void print_message(int a);
+
+int main(void)
+{
+    int a = 12;
+    std::cout << "Direccion de a en main: " << &a << std::endl;
+    std::cout << "Direccion de a global en main: " << &::a << std::endl;
+    print_message(a);
+    return 0;
+}
+
+void print_message(int a)
+{
+    std::cout << "Hello world!\n";
+    std::cout << "Parametro a: " << a << "\n";
+    std::cout << "Direccion de a en print: " << &a << std::endl;
+}
+  #+end_src
+- [ ] Passing by value and by refeence
+  #+begin_src cpp :tangle value-reference.cpp
+#include <iostream>
+
+int add1(int a, int b);
+int add2(int a, int & b);
+
+int main(int argc, char *argv[])
+{
+    int a = 12;
+    int b = -10;
+
+    std::cout << "Direccion de a en main: " << &a << std::endl;
+    std::cout << "Direccion de b en main: " << &b << std::endl;
+    std::cout << add1(a, b) << "\n";
+    std::cout << add2(a, b) << "\n";
+    return 0;
+}
+
+int add1(int a, int b)
+{
+    int r = a + b;
+    std::cout << "Direccion de a local en addition copy: " << &a << std::endl;
+    std::cout << "Direccion de b local en addition copy: " << &b << std::endl;
+    return r;
+}
+
+int add2(int a, int & b)
+{
+    int r = a + b;
+    std::cout << "Direccion de a local en addition copy: " << &a << std::endl;
+    std::cout << "Direccion de b local en addition ref : " << &b << std::endl;
+    return r;
+}
+
+  #+end_src
+  + Passing by value
+    |------------------------------+-------------------------------------------|
+    | Advantage                    | Disadvantage                              |
+    |------------------------------+-------------------------------------------|
+    | The variable is not modified | Slow for large data types (like =arrays=) |
+    |------------------------------+-------------------------------------------|
+
+  + Passing by reference
+    |-----------------------------+---------------------------------------------------|
+    | Advantage                   | Disadvantage                                      |
+    |-----------------------------+---------------------------------------------------|
+    | Fast (avoids copy/creation) | Can modify original var (solution: use const ref) |
+    |-----------------------------+---------------------------------------------------|
+- [ ] Lambda functions
+  #+begin_src cpp :tangle lambda.cpp
+// requires c++11: -std=c++11
+#include <iostream>
+
+int main(int argc, char *argv[]) {
+    auto flambda = [](int a, int b) {return a < b; };
+    bool flag = flambda(3, 4);
+    std::cout << flag << "\n";
+    std::cout << flambda(4, 3) << "\n";
+    return 0;
+}
+  #+end_src
+  - Exercise: Solver euler problem 1 with lambda for the divisor.
+- [ ] Recursive functions: call themselves
+  #+begin_src cpp :tangle recursive.cpp
+#include <iostream>
+
+int factorial_loop(int a);
+int factorial_recursive(int a);
+
+int main(int argc, char *argv[]) {
+
+    std::cout << factorial_loop(5) << std::endl;
+    std::cout << factorial_recursive(5) << std::endl;
+    
+    return 0;
+}
+
+int factorial_loop(int a)
+{
+    
+}
+
+int factorial_recursive(int a)
+{
+   
+}
+  #+end_src
