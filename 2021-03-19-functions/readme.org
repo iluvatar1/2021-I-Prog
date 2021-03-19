@@ -1,4 +1,4 @@
-* functions I [2/4]
+* functions I [4/4]
 - [X] variable scope
   #+begin_src cpp :tangle scope.cpp
 #include <iostream>
@@ -75,7 +75,7 @@ int add2(int a, const int & c)
     |-----------------------------+---------------------------------------------------|
     | Fast (avoids copy/creation) | Can modify original var (solution: use const ref) |
     |-----------------------------+---------------------------------------------------|
-- [ ] Lambda functions
+- [X] Lambda functions
   #+begin_src cpp :tangle lambda.cpp
 // requires c++11: -std=c++11
 #include <iostream>
@@ -91,7 +91,7 @@ int main(int argc, char *argv[]) {
 }
   #+end_src
   - Exercise: Solver euler problem 1 with lambda for the divisor.
-- [ ] Recursive functions: call themselves
+- [X] Recursive functions: call themselves
   #+begin_src cpp :tangle recursive.cpp
 #include <iostream>
 
