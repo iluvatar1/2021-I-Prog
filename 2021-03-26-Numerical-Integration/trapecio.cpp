@@ -9,10 +9,12 @@ int main(int argc, char *argv[]) {
     std::cout.setf(std::ios::scientific);
     double A = 0.0;
     double B = M_PI;
+    const double exact = 2.0;
     for (int p = 0; p <= 6; p++){
         int in = std::pow(10, p);
+        double delta_trapecio = std::fabs(trapecio(A, B, in)-exact)/exact;
         std::cout << in << "\t"
-                  << trapecio(A, B, in) << "\n";
+                  << delta_trapecio << "\n";
     }
     return 0;
 }
