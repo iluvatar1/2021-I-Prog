@@ -1,10 +1,10 @@
 #include <iostream>
 
-const int M = 3; // rows
-const int N = 5; // columns
-
 int main(void)
 {
+  const int M = 3; // rows
+  const int N = 5; // columns
+
 	double A[M][N] = {{0.0}};
 	double AT[N][M] = {{0.0}};
 
