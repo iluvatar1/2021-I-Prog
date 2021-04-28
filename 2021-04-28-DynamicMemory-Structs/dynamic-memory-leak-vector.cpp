@@ -1,12 +1,12 @@
 #include <iostream>
+#include <vector>
 
-void leakmemory(double * ptr);
+void leakmemory(void);
 
 int main(int argc, char *argv[])
 {
-    double *data = nullptr;
     for (int ii = 0; ii < 1000; ++ii) {
-        leakmemory(data);
+        leakmemory();
         if (ii%100 == 0) {
             std::cout << "ii: " << ii << "\n";
             std::cin.get();
@@ -16,13 +16,13 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-void leakmemory(double * ptr)
+void leakmemory(void)
 {
   const int N = 15000000; // this can be read in runtime
-  ptr = new double [N];//{0}; // ask for new memory
+  std::vector<double> data;
+  data.reserve(N);
+  data.resize(N);
 
-  std::cout << ptr[N/2] << std::endl;
+  //std::cout << ptr[N/2] << std::endl;
 
-  //delete [] ptr; // return memory
-  //ptr = nullptr;
 }
