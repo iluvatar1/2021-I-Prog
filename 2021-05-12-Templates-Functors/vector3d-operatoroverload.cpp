@@ -5,10 +5,9 @@ struct Vector3D {
     double x = 0, y = 0, z = 0;
     void print(void);
     Vector3D operator+(const Vector3D & rhs); // overload +
+    Vector3D operator-(const Vector3D & rhs); // overload -
+    double operator*(const Vector3D & rhs); // overload *
 };
-
-//void print(const Vector3D & vec);
-
 
 int main(int argc, char **argv)
 {
@@ -22,12 +21,12 @@ int main(int argc, char **argv)
     c.print();
     c = a + b;
     c.print();
-    //c = a - b;
-    //c.print();
+    c = a - b;
+    c.print();
+    double dotproduct = a*c;
+    std::cout << "dotproduct: " << dotproduct << std::endl;
     //c = 2*a;
     //c.print();
-    //double dotproduct = a*b;
-    //std::cout << "d:" << d << std::endl;
     //Vector3D d = a^b;  // cross product
     //d.print();
 
@@ -52,5 +51,25 @@ Vector3D Vector3D::operator+(const Vector3D & rhs)
     tmp.x = x + rhs.x;
     tmp.y = y + rhs.y;
     tmp.z = z + rhs.z;
+    return tmp;
+}
+
+Vector3D Vector3D::operator-(const Vector3D & rhs)
+{
+    Vector3D tmp;
+    // vector resultado = a - b // por componentes
+    tmp.x = x - rhs.x;
+    tmp.y = y - rhs.y;
+    tmp.z = z - rhs.z;
+    return tmp;
+}
+
+double Vector3D::operator*(const Vector3D & rhs)
+{
+    double tmp = 0;
+    // vector resultado = a - b // por componentes
+    tmp += x*rhs.x;
+    tmp += y*rhs.y;
+    tmp += z*rhs.z;
     return tmp;
 }
