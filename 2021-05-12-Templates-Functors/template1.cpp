@@ -10,6 +10,7 @@ int main(void)
     std::cout << getmax(-3.5, -2.9) << std::endl;
     std::cout << getmax(-4.5f, -12.9f) << std::endl;
     std::cout << getmax('a', 'h') << std::endl;
+    // std::cout << getmax(-3.5, -2) << std::endl; // error, tipos de datos diferentes
     return 0;
 }
 
