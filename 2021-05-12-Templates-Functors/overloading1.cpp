@@ -1,19 +1,19 @@
 #include <iostream>
 
 // declaration
-int getmax(int a, int b);
+double getmax(double a, double b);
 
 int main(void)
 {
     std::cout << getmax(3, 2) << std::endl;
-    
+    std::cout << getmax(-3.5, -2.9) << std::endl;    
     return 0;
 }
 
 // implementation
-int getmax(int a, int b)
+double getmax(double a, double b)
 {
-    int maximum = a;
+    double maximum = a;
     if (b > a) {
         maximum = b;
     }
